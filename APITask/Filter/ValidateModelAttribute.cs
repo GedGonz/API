@@ -25,7 +25,7 @@ namespace APITask.Filter
         }
        
     }
-    //Purbea!
+
     public class ExcepciontAttribute : ExceptionFilterAttribute
     {
         
