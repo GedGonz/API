@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgendaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AgendaEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Tareas" EntityType="AgendaModel.Tarea" />
+  </EntityContainer>
+  <EntityType Name="Tarea">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="estado" Nullable="false" />
+  </EntityType>
+</Schema>
