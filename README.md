@@ -1,6 +1,6 @@
 # API REST
 
-Api REST FULL 
+API REST FULL 
 Consulta los registros de una Base de datos donde realiza las siguientes operaciones:
 
 + GET: Obtiene toda las tareas. 
@@ -28,7 +28,7 @@ Consulta los registros de una Base de datos donde realiza las siguientes operaci
    Se desarollo en el entorno de Visual Stdio, en C#
 + SQL
 
-      Se creo una sola tabla con la siguiente estructura:
+  Se creo una sola tabla con la siguiente estructura:
    
       CREATE TABLE Tarea
    
