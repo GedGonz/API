@@ -19,6 +19,7 @@ namespace APITask.Controllers
         // GET: /Tarea/
 
         [ValidateModel]
+        [ExcepciontAttribute]
         public IHttpActionResult Get() 
         {
             var tasks = new ServicesAgenda().getallTask();
@@ -37,7 +38,8 @@ namespace APITask.Controllers
             }
             else
             {
-                return Content(HttpStatusCode.NotFound, "Task not found");
+                        
+               return Content(HttpStatusCode.NotFound, "Task not found");
             }    
             
         }

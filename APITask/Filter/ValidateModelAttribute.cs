@@ -17,11 +17,27 @@ namespace APITask.Filter
         {
             if (actionContext.ModelState.IsValid == false)
             {
-                //actionContext.Response = actionContext.Request.CreateErrorResponse(
-                //    HttpStatusCode.BadRequest, actionContext.ModelState);
                 actionContext.Response = actionContext.Request.CreateErrorResponse(
-                      HttpStatusCode.BadRequest, "An error occurred, please try again or contact the administrator.");
+                    HttpStatusCode.BadRequest, actionContext.ModelState);
+                //actionContext.Response = actionContext.Request.CreateErrorResponse(
+                //      HttpStatusCode.BadRequest, "An error occurred, please try again or contact the administrator.");
             }
         }
+       
+    }
+
+    public class ExcepciontAttribute : ExceptionFilterAttribute
+    {
+        
+        public override void OnException(HttpActionExecutedContext actionExecutedContext)
+        {
+            if (actionExecutedContext.Exception is Exception)
+            {
+                actionExecutedContext.Response = actionExecutedContext.Request.CreateErrorResponse(
+                    HttpStatusCode.BadRequest, actionExecutedContext.Exception.Message);
+            }
+     
+        }
+
     }
 }
